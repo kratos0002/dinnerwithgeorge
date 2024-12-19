@@ -4,10 +4,6 @@ import { ChatMessage } from './components/Chat/ChatMessage'
 import { useChatStore } from './store/chatStore'
 import './styles/App.css'
 
-const API_URL = import.meta.env.DEV 
-  ? 'http://localhost:3000/api/chat'
-  : '/api/chat';
-
 export default function App() {
   const { messages, addMessage } = useChatStore()
   const [isLoading, setIsLoading] = useState(false)
@@ -24,7 +20,7 @@ export default function App() {
 
       setIsLoading(true)
 
-      const response = await fetch(API_URL, {
+      const response = await fetch('/api/chat', {  // Changed this line
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
