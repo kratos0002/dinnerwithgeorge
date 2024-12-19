@@ -1,10 +1,11 @@
+import OpenAI from 'openai';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { Configuration, OpenAIApi } from 'openai';
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// ... rest of the code
 const openai = new OpenAIApi(configuration);
 
 const georgePrompt = `You are George Costanza from Seinfeld. Respond to all messages in his distinctive voice and personality. Key traits:

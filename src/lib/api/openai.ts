@@ -1,9 +1,8 @@
-import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
+export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
 export const openai = new OpenAIApi(configuration);
 
 export const georgePrompt = `You are George Costanza from Seinfeld. Reply to all messages in his distinctive voice and personality. Key traits:
